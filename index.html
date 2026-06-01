@@ -9,7 +9,7 @@
   <meta property="og:url" content="https://thanveermirza.github.io/Happy-Birthday-Kunju/"/>
   <meta property="og:title" content="Happy Birthday Kunju 🎂"/>
   <meta property="og:description" content="A special surprise just for you. Tap to open 💕"/>
-  <meta property="og:image" content="https://aliazhar1998.github.io/ali-hiba-wedding/couple.jpg"/>
+  <meta property="og:image" content="https://thanveermirza.github.io/Happy-Birthday-Kunju/couple.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta name="theme-color" content="#000000"/>
@@ -199,9 +199,18 @@ function showIntroScreen(){
   setTimeout(startMovingDot, 2000);
 }
 
+// Initialize audio once
+let _music = null;
+function getMusic(){
+  if(!_music) _music = document.getElementById('bg-music');
+  return _music;
+}
 function playMusic(){
-  const m = document.getElementById('bg-music');
-  if(m && m.paused){ m.volume=0.8; m.play().catch(()=>{}); }
+  const m = getMusic();
+  if(m && m.paused){
+    m.volume = 0.8;
+    m.play().catch(()=>{});
+  }
 }
 
 function dotClicked(){
